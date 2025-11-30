@@ -23,7 +23,7 @@ try:
     API_KEY = os.getenv("OUR_KEY")
     if not API_KEY:
         logger.warning("OUR_KEY environment variable not found. Using hardcoded fallback key.")
-        API_KEY = "AIzaSyDlNNKn-sCszfrlhANljr6hAOnFSU4AjLM"
+        API_KEY = process.env.GEMINI_API_KEY
     
     genai.configure(api_key=API_KEY)
     GEMINI_AVAILABLE = True
